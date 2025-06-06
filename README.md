@@ -1,12 +1,40 @@
-# PHASE_3_PROJECT
+# Stroke Prediction with Machine Learning: Classification Models 
 
 
-# INTRODUCTION
+## INTRODUCTION
 This project focuses on predicting the likelihood of stroke based on patient health data. Stroke is a major health concern with significant morbidity and mortality worldwide. Early identification of high-risk individuals can enable timely interventions and improve outcomes. The goal of this analysis is to build and evaluate classification models that can accurately predict stroke occurrence using demographic and medical features.
+
+### Business Problem
+Stroke is one of the leading causes of death and long-term disability, and timely prevention is often the key to reducing its impact. The challenge for many healthcare providers lies in identifying high-risk patients before symptoms appear. Rather than relying solely on reactive care, there’s a need for a data-driven approach that can flag individuals who might be more susceptible to strokes. By using machine learning to analyze patient data, this project aims to fill that gap — offering an efficient way to detect potential stroke cases early and enable preventative action.
+
+### Stakeholder
+This solution is primarily intended for hospital systems that manage large numbers of patients and aim to optimize preventive care. However, the benefits also extend to other stakeholders: insurance companies could use such models to manage risk profiles more effectively, and public health agencies may apply these insights at a broader scale to improve community health planning. Each of these groups has a vested interest in improving early detection strategies.
+
+### Business Impact
+A well-performing prediction model offers real value on multiple levels. For patients, it can mean earlier treatment, fewer complications, and a better chance at recovery. For healthcare systems, it translates to more efficient use of resources, fewer emergency interventions, and reduced long-term care costs. Over time, widespread use of predictive tools like this could lead to a noticeable drop in stroke rates, easing the burden on public health infrastructure while saving lives.
+
+### PROJECT AIM
+The goal of this project is to build predictive models that can accurately assess the risk of stroke based on individual health profiles. Using machine learning algorithms, the project analyzes medical and lifestyle-related data to uncover hidden patterns and key risk indicators. The aim is to develop a robust system capable of supporting early diagnosis and informing proactive healthcare decisions by training and comparing multiple models which ultimately contibutes to faster intervention and better patient outcomes.
 
 
 # DATA DESCRIPTION
-The dataset consists of patient records including features such as age, gender, hypertension status, heart disease history, marital status, work type, smoking status, and average glucose level. The target variable indicates whether a patient has had a stroke. The data includes both categorical and numerical variables, requiring preprocessing before modeling. The dataset is not balanced between stroke and non-stroke cases, this causes the use of SMOTE which will enable the class imbalance.
+Data : https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset
+
+The dataset used in this project is Stroke Prediction Dataset which contains medical records of patients and their associated risk factors for stroke. It includes the following features:
+
+    Id: Unique identification number for each patient.
+    Age: The age of the patient.
+    Hypertension: Whether the patient has hypertension (1 for yes, 0 for no).
+    Heart Disease: Whether the patient has a history of heart disease (1 for yes, 0 for no).
+    Ever Married: Whether the patient has been married (1 for yes, 0 for no).
+    Work Type: The type of work the patient does (e.g., private, self-employed, government, children).
+    Residence Type: Whether the patient resides in an urban or rural area.
+    Glucose Level: The patient's glucose level.
+    BMI (Body Mass Index): A measure of body fat based on height and weight.
+    Smoking Status: The smoking habit of the patient (e.g., never smoked, formerly smoked, currently smoking).
+    Stroke: The target variable indicating whether the patient had a stroke (1 for yes, 0 for no).
+    
+The target variable indicates whether a patient has had a stroke. The data includes both categorical and numerical variables, requiring preprocessing before modeling. The dataset is not balanced between stroke and non-stroke cases, this causes the use of SMOTE which will enable the class balance.
 
 
 # EXPLORATORY DATA ANALYSIS
