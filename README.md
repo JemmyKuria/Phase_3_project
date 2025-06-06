@@ -27,7 +27,10 @@ The baseline logistic regression model achieved moderate accuracy with balanced 
 
 # DISCUSSION
 The random forest’s superior performance suggests its suitability for real-world stroke risk prediction, where accurate detection of high-risk patients is critical. While decision trees provide valuable interpretability, random forests capture complex patterns more effectively. Feature importance analysis highlights key predictors, offering insights for medical professionals. Trade-offs between model complexity and interpretability should be considered based on stakeholder needs. Future work may explore additional models or techniques to further improve prediction or interpretability.
-!http://localhost:8888/view/Desktop/Flatiron/Phase_3/Phase_3_project/FeatureImportance.png
+
+!["Feature Importance"](FeatureImportance.png)
+
+
 
 
 
