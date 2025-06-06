@@ -49,7 +49,7 @@ Some of the insights noted were:
 !["AgeVsStroke"](AgeVsStroke.png)
 
 3. Generated a list of top features that are highly correlated with the target column
-!["CorrelatedFeatures"](CorrelatedFeatures.png)
+!["CorrelatedFeatures"](CorrelatedFeatures.PNG)
 
 
 # DATA PREPROCESSING
