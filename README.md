@@ -25,4 +25,9 @@ The modeling process began with a baseline logistic regression model due to its 
 The baseline logistic regression model achieved moderate accuracy with balanced precision and recall. Hyperparameter tuning did not substantially improve its performance. The decision tree model increased recall substantially, identifying a higher proportion of stroke cases but at some cost to precision. The random forest model outperformed all others, delivering the best accuracy (94%) and strong recall (97%) and precision (92%) for stroke prediction, indicating reliable classification and minimal false negatives.
 
 
+# DISCUSSION
+The random forest’s superior performance suggests its suitability for real-world stroke risk prediction, where accurate detection of high-risk patients is critical. While decision trees provide valuable interpretability, random forests capture complex patterns more effectively. Feature importance analysis highlights key predictors, offering insights for medical professionals. Trade-offs between model complexity and interpretability should be considered based on stakeholder needs. Future work may explore additional models or techniques to further improve prediction or interpretability.
+!http://localhost:8888/view/Desktop/Flatiron/Phase_3/Phase_3_project/FeatureImportance.png
+
+
 
