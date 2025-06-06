@@ -41,6 +41,16 @@ The target variable indicates whether a patient has had a stroke. The data inclu
 Exploratory analysis was conducted to understand feature distributions and relationships with the target variable. Visualizations such as histograms, box plots, and correlation matrices helped identify patterns and potential predictors of stroke. Initial observations revealed that factors like age, hypertension, and heart disease are strongly associated with stroke occurrence. This insight guided feature selection and engineering in the modeling phase.
 
 
+Some of the insights noted were:
+1. The classes were highly imbalanced which called for the SMOTE process.
+!["ClassDistribution"](ClassDistribution.png)
+
+2. Age feature has a high relationship with the target "Stroke"
+!["AgeVsStroke"](AgeVsStroke.png)
+
+3. Generated a list of top features that are highly correlated with the target column
+!["CorrelatedFeatures"](CorrelatedFeatures.png)
+
 
 # DATA PREPROCESSING
 The dataset required several preprocessing steps to ensure it was ready for modeling. First, a single row with the gender labeled as “Other” was dropped, as it represented a rare category and could introduce noise into the model without adding meaningful value.
@@ -64,7 +74,7 @@ work_type was also label encoded, with each category assigned an integer from 0 
 
 children, Never_worked, Govt_job, Private, and Self-employed were given distinct values to reflect different occupational backgrounds.
 
-This combination of one-hot and label encoding allowed the model to process categorical data efficiently while retaining important information. These encoded features, along with the numerical variables, were then scaled and passed into the modeling pipeline.
+This combination of one-hot and label encoding allowed the model to process categorical data efficiently while retaining important information. These encoded features, along with the numerical variables, were then scaled and passed into modeling.
 
 
 # MODELLING
