@@ -50,6 +50,9 @@ Some of the insights noted were:
 
 3. Generated a list of top features that are highly correlated with the target column
 !["CorrelatedFeatures"](CorrelatedFeatures.PNG)
+4. Made a pairplot to get a good view of the relationship
+!["Pairplot"](pairplot.png)
+
 
 
 # DATA PREPROCESSING
@@ -85,19 +88,27 @@ The modeling process began with a baseline logistic regression model due to its 
 
 
 
-# RESULTS
-The baseline logistic regression model achieved moderate accuracy with balanced precision and recall. Hyperparameter tuning did not substantially improve its performance. The decision tree model increased recall substantially, identifying a higher proportion of stroke cases but at some cost to precision. The random forest model outperformed all others, delivering the best accuracy (94%) and strong recall (97%) and precision (92%) for stroke prediction, indicating reliable classification and minimal false negatives.
+# Evaluation
 
-!["Random Forest Classifier"](RandomForestReport.PNG)
+!["Logistic Model"](Bestmodel.PNG)
 
-
-# DISCUSSION
-The random forest’s superior performance suggests its suitability for real-world stroke risk prediction, where accurate detection of high-risk patients is critical. While decision trees provide valuable interpretability, random forests capture complex patterns more effectively. Feature importance analysis highlights key predictors, offering insights for medical professionals. Trade-offs between model complexity and interpretability should be considered based on stakeholder needs. Future work may explore additional models or techniques to further improve prediction or interpretability.
-
+A list of top features.
 !["Feature Importance"](FeatureImportance.png)
+
+After trying out different models like Logistic Regression, Random Forest, and XGBoost, I decided to go with Logistic Regression as the best option for this stroke prediction task. The main reason is that it gave the highest recall for the stroke class, which is super important because we want to catch as many actual stroke cases as possible. Even though its precision was low, meaning there are a lot of false positives, I think it’s better to have some extra caution here rather than miss real stroke patients.
+
+Random Forest and XGBoost had good overall accuracy, but they didn’t do as well in detecting the minority class — stroke cases. Their recall was much lower, which means they missed more actual strokes. Since the whole point is to identify those at risk, I had to prioritize recall over accuracy or precision.
+
+Also, Logistic Regression was simpler and easier to interpret compared to the other models. It’s faster to train, and with proper tuning and threshold adjustments, there’s still room to improve its precision. So for this project, balancing between catching true stroke cases and managing false alarms, Logistic Regression is my best model.
 
 
 # CONCLUSION
-This project successfully developed classification models to predict stroke risk, with the random forest model emerging as the most effective. The approach balanced interpretability and predictive accuracy, addressing the critical business need for early stroke detection. The findings can assist healthcare providers in identifying at-risk patients and informing preventive strategies. Further refinement and validation on larger datasets are recommended for deployment readiness.
+In this project, I worked on building a machine learning model to predict the likelihood of a stroke based on patient data. Since the dataset was highly imbalanced, I paid special attention to handling the minority class using resampling techniques and choosing the right evaluation metrics like recall, precision, F1-score, and ROC AUC.
+
+Tested multiple models including Logistic Regression, Random Forest, and XGBoost. After comparing their results, I found that Logistic Regression performed the best in terms of recall, which is very important for this kind of health-related prediction task. Although it had low precision, I preferred it over the others because it was able to catch more actual stroke cases.
+
+Applied hyperparameter tuning to improve each model, and the ROC curve comparison confirmed that Logistic Regression had the best balance between detecting strokes and minimizing false negatives.
+
+Overall, this project shows how important it is to look beyond accuracy—especially when dealing with imbalanced medical datasets—and focus on the metrics that really matter for the problem at hand
 
 
