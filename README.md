@@ -8,13 +8,20 @@ This project focuses on predicting the likelihood of stroke based on patient hea
 Stroke is one of the leading causes of death and long-term disability, and timely prevention is often the key to reducing its impact. The challenge for many healthcare providers lies in identifying high-risk patients before symptoms appear. Rather than relying solely on reactive care, there’s a need for a data-driven approach that can flag individuals who might be more susceptible to strokes. By using machine learning to analyze patient data, this project aims to fill that gap — offering an efficient way to detect potential stroke cases early and enable preventative action.
 
 ### Stakeholder
-This solution is primarily intended for hospital systems that manage large numbers of patients and aim to optimize preventive care. However, the benefits also extend to other stakeholders: insurance companies could use such models to manage risk profiles more effectively, and public health agencies may apply these insights at a broader scale to improve community health planning. Each of these groups has a vested interest in improving early detection strategies.
+This solution is primarily intended for hospital systems that manage large numbers of patients and aim to optimize preventive care. However, the benefits also extend to other stakeholders: public health agencies may apply these insights at a broader scale to improve community health planning. Each of these groups has a vested interest in improving early detection strategies.
 
 ### Business Impact
 A well-performing prediction model offers real value on multiple levels. For patients, it can mean earlier treatment, fewer complications, and a better chance at recovery. For healthcare systems, it translates to more efficient use of resources, fewer emergency interventions, and reduced long-term care costs. Over time, widespread use of predictive tools like this could lead to a noticeable drop in stroke rates, easing the burden on public health infrastructure while saving lives.
 
-### PROJECT AIM
-The goal of this project is to build predictive models that can accurately assess the risk of stroke based on individual health profiles. Using machine learning algorithms, the project analyzes medical and lifestyle-related data to uncover hidden patterns and key risk indicators. The aim is to develop a robust system capable of supporting early diagnosis and informing proactive healthcare decisions by training and comparing multiple models which ultimately contibutes to faster intervention and better patient outcomes.
+### Objectives
+To develop a predictive model that can accurately classify whether a person is at risk of having a stroke based on medical and demographic data.
+
+To handle class imbalance in the dataset using appropriate resampling techniques and evaluation metrics that reflect the performance on the minority (stroke) class.
+
+To compare the performance of different classification algorithms (Logistic Regression, Random Forest, XGBoost) using metrics such as recall, precision, F1-score, accuracy, and ROC AUC.
+
+To select and fine-tune the best model through hyperparameter tuning in order to improve its ability to identify stroke cases while minimizing false negatives.
+
 
 
 # DATA DESCRIPTION
@@ -82,7 +89,9 @@ This combination of one-hot and label encoding allowed the model to process cate
 
 # MODELLING
 
-The modeling process began with a baseline logistic regression model due to its interpretability and simplicity. Hyperparameter tuning was performed using grid search to optimize regularization parameters and class weights. Subsequently, a decision tree model was trained to capture non-linear feature interactions and improve recall for stroke cases. Finally, a random forest ensemble was implemented, achieving the highest accuracy and balanced recall-precision tradeoff by aggregating multiple decision trees. Model performance was evaluated using accuracy, precision, recall, F1-score, and ROC-AUC, with special focus on recall to minimize missed stroke cases.
+In this part of the project, I focused on building and evaluating models to predict whether a person is likely to have a stroke. Since the dataset is highly imbalanced (very few stroke cases compared to non-stroke), I made sure to use methods that can handle this issue properly.
+
+My main goal here was to create a model that can correctly identify as many stroke cases as possible. I started by trying out different classification models and used resampling techniques to deal with the imbalance. I also did hyperparameter tuning to improve model performance and used evaluation metrics like recall, precision, F1-score, and ROC AUC to make a fair comparison between models.
 
 !["ROC"](ROC.png)
 
@@ -97,7 +106,7 @@ A list of top features.
 
 After trying out different models like Logistic Regression, Random Forest, and XGBoost, I decided to go with Logistic Regression as the best option for this stroke prediction task. The main reason is that it gave the highest recall for the stroke class, which is super important because we want to catch as many actual stroke cases as possible. Even though its precision was low, meaning there are a lot of false positives, I think it’s better to have some extra caution here rather than miss real stroke patients.
 
-Random Forest and XGBoost had good overall accuracy, but they didn’t do as well in detecting the minority class — stroke cases. Their recall was much lower, which means they missed more actual strokes. Since the whole point is to identify those at risk, I had to prioritize recall over accuracy or precision.
+Random Forest and XGBoost had good overall accuracy, but they didn’t do as well in detecting the minority class, stroke cases. Their recall was much lower, which means they missed more actual strokes. Since the whole point is to identify those at risk, I had to prioritize recall over accuracy or precision.
 
 Also, Logistic Regression was simpler and easier to interpret compared to the other models. It’s faster to train, and with proper tuning and threshold adjustments, there’s still room to improve its precision. So for this project, balancing between catching true stroke cases and managing false alarms, Logistic Regression is my best model.
 
@@ -109,6 +118,6 @@ Tested multiple models including Logistic Regression, Random Forest, and XGBoost
 
 Applied hyperparameter tuning to improve each model, and the ROC curve comparison confirmed that Logistic Regression had the best balance between detecting strokes and minimizing false negatives.
 
-Overall, this project shows how important it is to look beyond accuracy—especially when dealing with imbalanced medical datasets—and focus on the metrics that really matter for the problem at hand
+Overall, this project shows how important it is to look beyond accuracy,especially when dealing with imbalanced medical datasets,and focus on the metrics that really matter for the problem at hand
 
 
